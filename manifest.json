@@ -9,7 +9,8 @@
     "tabs",
     "contextMenus",
     "*://www.twitch.com/*",
-    "*://go.twitch.com/*"
+    "*://go.twitch.com/*",
+    "*://www.youtube.com/*"
   ],
 
   "icons": { "16": "icon16.png",
@@ -20,7 +21,8 @@
     {
       "matches": [
         "*://www.twitch.tv/*",
-        "*://go.twitch.tv/*"
+        "*://go.twitch.tv/*",
+        "*://www.youtube.com/*"
       ],
       "js": ["embedder.js"],
       "run_at": "document_end"
