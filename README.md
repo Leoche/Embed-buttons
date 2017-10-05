@@ -7,7 +7,7 @@ Add Embed buttons links to popular websites, just click and you got your player 
 - [x] Twitch
 - [ ] YouTube
 - [ ] Dailymotion
-- [ ] Extension Image
+- [x] Extension Image
 - [ ] Google Store
 
 ## Images
