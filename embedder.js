@@ -13,10 +13,10 @@ function isTwitch(){
    return document.querySelector("title").innerText.match(/Twitch$/i) !== null
 }
 function getTwitchUser(){
-   return document.querySelector(".channel-header__user") === null ? null : document.querySelector(".channel-header__user").attributes["href"].nodeValue.replace("/", "");
+   return getMetaAttribute("url").split("/")[3];
 }
 function addTwitchButton(url){
-   var button = document.querySelector(".channel-info-bar__action-container .flex:last-child div");
+   var button = document.querySelector(".channel-info-bar__action-container .tw-flex:last-child div");
    button.insertAdjacentHTML('beforebegin', twitchButton.replace("$1", url));
 }
 function hasEmbedButton(url){
@@ -37,18 +37,32 @@ function addYoutubeButton(url){
    button.insertAdjacentHTML('afterend', youtubeButton.replace("$1", url));
 }
 
+function getMetaAttribute (attribute){
+  var key = null;
+  var value = null;
+  var meta = document.getElementsByTagName('meta');
+  for( var i = 0, l = meta.length; i < l; i += 1 ) {
+    key = meta[i].name || meta[i].getAttribute('property');
+    if( !key )
+      continue;
+    if( key.split(':')[0] === 'og' )
+      key = key.split(':')[1];
+    if( key === attribute )
+      value = meta[i].content;
+  }
+  return value;
+}
+
 var observeDOM = (function(){
     var MutationObserver = window.MutationObserver || window.WebKitMutationObserver,
         eventListenerSupported = window.addEventListener;
 
     return function(obj, callback){
         if( MutationObserver ){
-            // define a new observer
             var obs = new MutationObserver(function(mutations, observer){
                 if( mutations[0].addedNodes.length || mutations[0].removedNodes.length )
                     callback();
             });
-            // have the observer observe foo for changes in children
             obs.observe( obj, { childList:true, subtree:true });
         }
         else if( eventListenerSupported ){
