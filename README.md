@@ -7,7 +7,7 @@
 
 Add Embed buttons links to popular websites, just click and you got your player full window
 
-## To install
+## Instalation
 
 Install tutorial https://developer.chrome.com/extensions/getstarted#unpacked
 
