@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
 
-  "name": "Embed buttons",
-  "description": "Chrome Extension - Add Embed buttons links to popular webstes",
+  "name": "Fullscreen buttons",
+  "description": "Chrome Extension - Add Fullscreen buttons links to popular webstes",
   "version": "1.0",
 
   "permissions": [

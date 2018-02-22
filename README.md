@@ -1,6 +1,19 @@
-# Embed buttons
+<p align="center">
+<img src="./medias/logo.png">
+</p>
+<p align="center">
+<img src="./medias/hero.png">
+</p>
 
 Add Embed buttons links to popular websites, just click and you got your player full window
+
+## To install
+
+Install tutorial https://developer.chrome.com/extensions/getstarted#unpacked
+
+## Supported platforms
+
+<img src="./medias/medias.png">
 
 ## Todo list
 
@@ -9,13 +22,3 @@ Add Embed buttons links to popular websites, just click and you got your player 
 - [ ] Dailymotion
 - [x] Extension Icon
 - [ ] Google Store
-
-## Images
-
-Twitch example:
-
-![Twitch example](https://i.imgur.com/XfFTmdg.png)
-
-Youtube example:
-
-![Youtube example](https://i.imgur.com/VawnKrG.png)
