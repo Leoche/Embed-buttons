@@ -13,7 +13,7 @@ function isTwitch(){
    return document.querySelector("title").innerText.match(/Twitch$/i) !== null
 }
 function getTwitchUser(){
-   return getMetaAttribute("url").split("/")[3];
+   return document.querySelector(".channel-header__user h5").innerText;
 }
 function addTwitchButton(url){
    var button = document.querySelector(".channel-info-bar__action-container .tw-flex:last-child div");
@@ -35,22 +35,6 @@ function getYoutubeLink(){
 function addYoutubeButton(url){
    var button = document.querySelector(".ytp-fullscreen-button");
    button.insertAdjacentHTML('afterend', youtubeButton.replace("$1", url));
-}
-
-function getMetaAttribute (attribute){
-  var key = null;
-  var value = null;
-  var meta = document.getElementsByTagName('meta');
-  for( var i = 0, l = meta.length; i < l; i += 1 ) {
-    key = meta[i].name || meta[i].getAttribute('property');
-    if( !key )
-      continue;
-    if( key.split(':')[0] === 'og' )
-      key = key.split(':')[1];
-    if( key === attribute )
-      value = meta[i].content;
-  }
-  return value;
 }
 
 var observeDOM = (function(){
